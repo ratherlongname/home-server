@@ -38,6 +38,9 @@ ssh dietpi@<IP of RPi / hostname from dietpi.txt>
 ```bash
 # Follow the output of the first run setup
 tail -n 10 -f /var/tmp/dietpi/logs/dietpi-firstrun-setup.log
+
+# Check output of automation custom script run after install
+cat /var/tmp/dietpi/logs/dietpi-automation_custom_script.log
 ```
 
 10. Reboot the RPi.
