@@ -100,27 +100,22 @@ Setup Plex
 
 More setting up
 ---------------
-1. Remove rTorrent lock if hostname was changed in `dietpi.txt`. Otherwise rTorrent won't work.
+1. Change default download directory of qBittorrent. In the WebUI `Settings > Downloads > Default Save Path`. Note: Ensure the specified directory doesn't exist already. Otherwise qBittorrent may have insufficient permissions to write to it.
 
-```bash
-sudo rm /mnt/dietpi_userdata/downloads/.session/rtorrent.lock
-sudo systemctl restart rtorrent
-```
-
-2. Change default download directory of rTorrent
-
-```bash
-sudo nano /mnt/dietpi_userdata/rtorrent/.rtorrent.rc
-# Edit 'directory.default.set'
-sudo systemctl restart rtorrent
-```
-
-3. Change netdata configuration to allow remote connections
+2. Change netdata configuration to allow remote connections.
 
 ```bash
 sudo nano /etc/netdata/netdata.conf
 # Comment out the line 'bind socket to IP = 127.0.0.1'
 sudo systemctl restart netdata
+```
+
+3. Change directory served by ProFTPD.
+
+```bash
+sudo nano /etc/proftpd/proftpd.conf
+# Edit `DefaultRoot` option
+sudo systemctl restart proftpd
 ```
 
 References
