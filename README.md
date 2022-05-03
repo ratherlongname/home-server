@@ -3,13 +3,16 @@ Home server setup w/ DietPi
 
 Setup a multi-function home server on a Raspberry Pi 4.
 
-I'll use the [DietPi][1] operating system, which is a minimal image designed to run on small single board computers like my RPi. It also uses dialog boxes, so I won't have to use command line commands any more than I need to.
+I'll use the [DietPi][1] operating system, which is a minimal image designed to run
+on small single board computers like my RPi. It also uses dialog boxes, so I won't
+have to remember command line commands any more than I need to.
 
 I also won't connect the RPi to any keyboard or monitor. It will always be headless.
 
 
 Setup DietPi
 ------------
+
  1. Add wifi network SSID and password to the `dietpi-wifi.txt` present in this repository.
 
  2. Edit the `dietpi.txt` file in this repository, fill in sensitive fields like passwords etc.
@@ -27,10 +30,11 @@ Setup DietPi
  8. SSH into the RPi.
 
 ```bash
-# Hostname will work only if `avahi-daemon` was specified to be downloaded in `dietpi.txt` and DietPi's first boot setup is complete.
+# Hostname will work only if `avahi-daemon` was specified to be downloaded
+# in `dietpi.txt` and DietPi's first boot setup is complete.
 # Otherwise find IP address of RPi by logging into the network's router.
 
-ssh dietpi@<IP of RPi / hostname from dietpi.txt>
+ssh dietpi@<IP address / hostname.local from dietpi.txt>
 ```
 
  9. If DietPi's first boot setup is still running, a message will print on loop. Wait for it to finish.
@@ -65,6 +69,7 @@ sudo apt-get upgrade
 
 Setup an external media drive
 -----------------------------
+
 1. Organize the movies, shows, music on the drive for Plex. [Follow this guide][3].
 2. Plug the drive into the RPi.
 
@@ -87,6 +92,7 @@ cat /etc/fstab
 
 Setup Plex
 ----------
+
 1. Plex is already installed if it was specified in `dietpi.txt`. Otherwise use `dietpi-software` to install it.
 
 2. Open `http://<server hostname>.local:32400/web` from any device on the same network as the server.
@@ -100,6 +106,7 @@ Setup Plex
 
 More setting up
 ---------------
+
 1. Change default download directory of qBittorrent. In the WebUI `Settings > Downloads > Default Save Path`. Note: Ensure the specified directory doesn't exist already. Otherwise qBittorrent may have insufficient permissions to write to it.
 
 2. Change netdata configuration to allow remote connections.
@@ -120,6 +127,7 @@ sudo systemctl restart proftpd
 
 References
 ----------
+
 - How to install DietPi (https://dietpi.com/docs/install)
 - DietPi software list (https://dietpi.com/docs/software)
 - DietPi full software list with IDs (https://github.com/MichaIng/DietPi/wiki/DietPi-Software-list)
