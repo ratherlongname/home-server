@@ -57,7 +57,7 @@ AUTO_SETUP_SWAPFILE_SIZE=1
 AUTO_SETUP_SWAPFILE_LOCATION=/var/swap
 
 # Set to "1" to disable HDMI/video output and framebuffers on Raspberry Pi, to reduce power consumption and memory usage: Works on RPi only!
-AUTO_SETUP_HEADLESS=1
+AUTO_SETUP_HEADLESS=0
 
 # Unmask (enable) systemd-logind service (including dbus), which is masked by default on DietPi
 AUTO_UNMASK_LOGIND=0
@@ -84,7 +84,7 @@ AUTO_SETUP_BACKUP_RESTORE=0
 AUTO_SETUP_SSH_SERVER_INDEX=-2
 
 # Logging mode choice: 0=none/custom | -1=RAMlog 1h clear | -2=RAMlog 1h save clear | -3=rsyslog + logrotate
-AUTO_SETUP_LOGGING_INDEX=-1
+AUTO_SETUP_LOGGING_INDEX=-3
 # RAMlog max tmpfs size (MB). 50MB should be fine for single use. 200MB+ for heavy webserver and access log etc.
 AUTO_SETUP_RAMLOG_MAXSIZE=50
 
@@ -110,7 +110,7 @@ AUTO_SETUP_AUTOSTART_TARGET_INDEX=0
 # Autologin user name
 # - This user must exist before firstrun installs, otherwise it will be reverted to root.
 # - Applies to all autostart options but: 0, 6, 14 and 16
-AUTO_SETUP_AUTOSTART_LOGIN_USER=root
+AUTO_SETUP_AUTOSTART_LOGIN_USER=dietpi
 
 ##### Non-interactive Firstrun Setup #####
 # On first login, run update, initial setup and software installs without any user input
@@ -148,7 +148,7 @@ AUTO_SETUP_INSTALL_SOFTWARE_ID=46
 AUTO_SETUP_INSTALL_SOFTWARE_ID=65
 
 # Fail2ban - ban IPs for 10 mins after 3 failed ssh attempts
-AUTO_SETUP_INSTALL_SOFTWARE_ID=73
+# AUTO_SETUP_INSTALL_SOFTWARE_ID=73
 
 # Nginx
 AUTO_SETUP_INSTALL_SOFTWARE_ID=85
@@ -157,7 +157,7 @@ AUTO_SETUP_INSTALL_SOFTWARE_ID=85
 AUTO_SETUP_INSTALL_SOFTWARE_ID=92
 
 # ProFTPD
-AUTO_SETUP_INSTALL_SOFTWARE_ID=94
+# AUTO_SETUP_INSTALL_SOFTWARE_ID=94
 
 # Sonarr
 # AUTO_SETUP_INSTALL_SOFTWARE_ID=144
