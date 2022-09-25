@@ -7,8 +7,8 @@ I'll use the [DietPi][1] operating system, which is a minimal image designed to 
 on small single board computers like my RPi. It also uses dialog boxes, so I won't
 have to remember command line commands any more than I need to.
 
-I also won't connect the RPi to any keyboard or monitor. It will always be headless.
-
+I also won't connect the RPi to any keyboard or monitor. But, I've installed a
+desktop environment just in case I do need it.
 
 Setup DietPi
 ------------
@@ -123,6 +123,15 @@ sudo systemctl restart netdata
 sudo nano /etc/proftpd/proftpd.conf
 # Edit `DefaultRoot` option
 sudo systemctl restart proftpd
+```
+
+Using the desktop
+-----------------
+
+1. Run the dekstop (by default, the desktop environment is not run on startup).
+
+```bash
+startx
 ```
 
 References
