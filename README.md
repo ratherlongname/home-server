@@ -19,7 +19,7 @@ Setup DietPi
 
  3. Download latest image from [DietPi][1].
 
- 4. Mount the `.img` file.
+ 4. Mount the `.img` file (on macos: double click the file).
 
  5. Replace existing `dietpi.txt`, `dietpi-wifi.txt` files with the edited ones.
 
@@ -27,12 +27,12 @@ Setup DietPi
 
  7. Plug the USB drive into the RPi 4 and power it on.
 
- 8. SSH into the RPi.
+ 8. SSH into the RPi. Find the RPi's IP by logging into the router, or use `nmap` ([instructions here][4]).
 
 ```bash
 # Hostname will work only if `avahi-daemon` was specified to be downloaded
 # in `dietpi.txt` and DietPi's first boot setup is complete.
-# Otherwise find IP address of RPi by logging into the network's router.
+# Otherwise IP address of the RPi is needed.
 
 ssh dietpi@<IP address / hostname.local from dietpi.txt>
 ```
@@ -145,3 +145,4 @@ References
 [1]: https://dietpi.com
 [2]: https://www.balena.io/etcher
 [3]: https://support.plex.tv/articles/categories/your-media/
+[4]: https://apple.stackexchange.com/a/261921/424526
